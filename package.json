@@ -1,0 +1,19 @@
+{
+  "name": "wework",
+  "version": "1.0.0",
+  "description": "registro de asistencias",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnaflaviaDiaz/wework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnaflaviaDiaz/wework/issues"
+  },
+  "homepage": "https://github.com/AnaflaviaDiaz/wework#readme"
+}
