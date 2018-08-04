@@ -13,45 +13,78 @@
 </head>
 
 <body>
-  <header id="header-principal">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-app" id="big-nav">
-      <a class="navbar-brand lite">
-        <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""> Visitor
-      </a>
-      <form class="form-inline">
-        <button class="btn btn-outline-lite my-2 my-sm-0" id="logo" type="submit">Administrador</button>
-      </form>
-    </nav> -->
-  </header>
-
-  <main class="container">
-    <aside>
-      <form id="register-visitor">
-        <!-- <div class="form-group">
-          <h2>Registro de visitas</h2>
+  <main>
+    <aside id="register-visitor">
+      <header id="header-principal">
+        <nav class="navbar navbar-light bg-app" id="big-nav">
+          <a class="navbar-brand lite">
+            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""> Visitor
+          </a>
+          <form class="form-inline">
+            <button type="button" class="btn btn-outline-lite my-2 my-sm-0" id="btn-to-loggin-admin" type="submit">Administrador</button>
+          </form>
+        </nav>
+      </header>
+      <form class="container">
+        <div class="form-group spaces">
+          <h2 class="text-center">Registro de visitas</h2>
         </div>
         <div class="form-group spaces">
           <h6>Completa tus datos personales</h6>
         </div>
         <div class="form-group spaces">
           <label>Nombre Completo</label>
-          <input type="text" class="form-control" placeholder="escribe tu nombre completo">
+          <input type="text" class="form-control" placeholder="Escribe tu nombre completo">
         </div>
         <div class="form-group spaces">
           <label>DNI</label>
-          <input type="number" class="form-control" placeholder="escribe tu DNI">
+          <input type="number" class="form-control" placeholder="Escribe tu DNI">
         </div>
         <div class="form-group spaces">
           <label>Celular</label>
-          <input type="number" class="form-control" placeholder="escribe tu número de celular">
+          <input type="number" class="form-control" placeholder="Escribe tu número de celular">
         </div>
-        <button class="btn btn-app" id="btn-register-visitor">Aceptar</button> -->
+        <div class="align-content-center text-center spaces">
+          <button type="button" class="btn btn-app" id="btn-ok-register-visitor">Aceptar</button>
+        </div>
+      </form>
+    </aside>
+
+    <aside id="login-admin" style="display: none">
+      <header>
+        <nav class="navbar navbar-light bg-app" id="big-nav">
+          <a class="navbar-brand lite">
+            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""> Visitor
+          </a>
+          <form class="form-inline">
+            <button type="button" class="btn btn-outline-lite my-2 my-sm-0" id="btn-to-main" type="submit">Registrar visita</button>
+          </form>
+        </nav>
+      </header>
+      <form class="container">
+        <div class="form-group spaces">
+          <h2 class="text-center">Inicia Sesión</h2>
+        </div>
+        <div class="align-content-center text-center spaces">
+          <img src="img/icons/telefono-inteligente.png" alt="icon">
+        </div>
+        <div class="form-group spaces">
+          <label>Correo Electrónico</label>
+          <input type="email" class="form-control" placeholder="Escribe tu email">
+        </div>
+        <div class="form-group spaces">
+          <label>Contraseña</label>
+          <input type="password" class="form-control" placeholder="Escribe tu contraseña">
+        </div>
+        <div class="align-content-center text-center spaces">
+          <button type="button" class="btn btn-app" id="btn-ok-login-admin">Aceptar</button>
+        </div>
       </form>
     </aside>
   </main>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-  <script src="views/header-principal.js"></script>
-  <script src="views/form-register-visitor.js"></script>
+  <!-- <script src="views/register-visitor.js"></script>
+  <script src="views/login-admin.js"></script> -->
   <script src="app.js"></script>
 </body>
 

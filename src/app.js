@@ -1,14 +1,27 @@
-const headerP = document.getElementById("header-principal");
-const formRegisterV = document.getElementById("register-visitor");
+const sectionRegisterVisitor = document.getElementById("register-visitor");
+const sectionLoginAdmin = document.getElementById("login-admin");
+const btnToLoginAdmin = document.getElementById("btn-to-loggin-admin");
+const btnOkRegisterVisitor = document.getElementById("btn-ok-register-visitor");
+const btnToMain = document.getElementById("btn-to-main");
+const btnOkLoginAdmin = document.getElementById("btn-ok-login-admin");
 
-// components
-headerP.innerHTML = headerPrincipal;
-formRegisterV.innerHTML = formRegisterVisitor;
+const goToLoginAdmin = () => {
+	sectionRegisterVisitor.style.display = "none";
+	sectionLoginAdmin.style.display = "block";
+}
 
-// se genera despues de traer los componentes
-const btnLoginAdmin = document.getElementById("btn-loggin-admin");
-const btnRegisterVisitor = document.getElementById("btn-register-visitor");
+const goToMain = () => {
+	sectionLoginAdmin.style.display = "none";
+	sectionRegisterVisitor.style.display = "block";
+}
 
 // botones
-btnLoginAdmin.addEventListener("click", () => console.log("login admin"))
-btnRegisterVisitor.addEventListener("click", () => console.log("hola"));
+btnToLoginAdmin.addEventListener("click", () => {
+	goToLoginAdmin();
+});
+btnOkRegisterVisitor.addEventListener("click", () => console.log("aceptar registro"));
+
+btnToMain.addEventListener("click", () => {
+	goToMain();
+});
+btnOkLoginAdmin.addEventListener("click", () => console.log("aceptar login admin"));
