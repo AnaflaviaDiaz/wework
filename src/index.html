@@ -34,15 +34,24 @@
         </div>
         <div class="form-group spaces">
           <label>Nombre Completo</label>
-          <input type="text" class="form-control" placeholder="Escribe tu nombre completo">
+          <input id="txt-name-visitor" type="text" class="form-control" placeholder="Escribe tu nombre completo">
+          <div class="text-center align-content-center no-spaces" id="wrong-name" hidden>
+            <label class="wrong-data">el nombre no es válido</label>
+          </div>
         </div>
         <div class="form-group spaces">
           <label>DNI</label>
-          <input type="number" class="form-control" placeholder="Escribe tu DNI">
+          <input id="txt-dni-visitor" type="number" class="form-control" placeholder="Escribe tu DNI">
+          <div class="text-center align-content-center no-spaces" id="wrong-dni" hidden>
+            <label class="wrong-data">el DNI no es válido</label>
+          </div>
         </div>
         <div class="form-group spaces">
           <label>Celular</label>
-          <input type="number" class="form-control" placeholder="Escribe tu número de celular">
+          <input id="txt-cel-visitor" type="number" class="form-control" placeholder="Escribe tu número de celular">
+          <div class="text-center align-content-center" id="wrong-cel" hidden>
+            <label class="wrong-data">el número de celular no es válido</label>
+          </div>
         </div>
         <div class="align-content-center text-center spaces">
           <button type="button" class="btn btn-app" id="btn-ok-register-visitor">Aceptar</button>
@@ -85,6 +94,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <!-- <script src="views/register-visitor.js"></script>
   <script src="views/login-admin.js"></script> -->
+  <script src="js/data.js"></script>
   <script src="app.js"></script>
 </body>
 
