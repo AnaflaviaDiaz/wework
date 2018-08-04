@@ -18,5 +18,22 @@ describe("test", () => {
 			assert.equal(visitor.dni, false);
 			assert.equal(visitor.cel, false);
     });
+	});
+	describe("validateLoginAdmin(email, password)", () => {
+    it("la función de validateLoginAdmin debe devolver un objeto con propiedades email y password", () => {
+      const admin = validateLoginAdmin("ana@gmail.com", "123456");
+      assert.ok(admin.hasOwnProperty("email"));
+      assert.ok(admin.hasOwnProperty("password"));
+    });
+    it("debe retornar como valor de las propiedades true para comprobar que son válidas", () => {
+			const admin = validateLoginAdmin("ana@gmail.com", "123456");
+			assert.equal(admin.email, true);
+			assert.equal(admin.password, true);
+		});
+		it("debe retornar como valor de las propiedades false para comprobar que son inválidas", () => {
+			const admin = validateLoginAdmin("", "");
+			assert.equal(admin.email, false);
+			assert.equal(admin.password, false);
+    });
   });
 });
