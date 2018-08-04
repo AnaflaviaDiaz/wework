@@ -8,3 +8,21 @@ const config = {
 };
 
 firebase.initializeApp(config);
+
+window.userSesion = () => {
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      window.location.href = "../../src/views/wall-admin.html"
+    }
+  });
+}
+
+window.loginAdmin = (email, pass) => {
+  return firebase.auth().signInWithEmailAndPassword(email, pass)
+}
+
+window.logoutAdmin = () => {
+  firebase.auth().signOut().then(function() {
+    window.location.href = "../"
+  });
+}

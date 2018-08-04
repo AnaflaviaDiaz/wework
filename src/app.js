@@ -15,6 +15,10 @@ const wrongCel = document.getElementById("wrong-cel");
 const wrongEmail = document.getElementById("wrong-email");
 const wrongPassword = document.getElementById("wrong-password");
 
+window.onload = () => {
+	userSesion();
+}
+
 const goToLoginAdmin = () => {
 	sectionRegisterVisitor.style.display = "none";
 	sectionLoginAdmin.style.display = "block";
@@ -45,7 +49,14 @@ const showValidateLoginAdmin = (admin) => {
   if (admin.password) wrongPassword.hidden = true;
 	else wrongPassword.hidden = false;
 
-  if (admin.email && admin.password) console.log("todo correcto");
+  if (admin.email && admin.password) {
+		const aprroved = loginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
+		aprroved.then(() => {
+			console.log("se puede");
+		}).catch(() => {
+			wrongPassword.hidden = false;
+		});
+	};
 }
 
 // botones
