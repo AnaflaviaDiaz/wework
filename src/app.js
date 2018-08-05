@@ -1,3 +1,4 @@
+const sectionTakePhotoVisitor = document.getElementById('take-photo-visitor');
 const sectionRegisterVisitor = document.getElementById("register-visitor");
 const sectionLoginAdmin = document.getElementById("login-admin");
 const btnToLoginAdmin = document.getElementById("btn-to-loggin-admin");
@@ -14,7 +15,7 @@ const wrongDni= document.getElementById("wrong-dni");
 const wrongCel = document.getElementById("wrong-cel");
 const wrongEmail = document.getElementById("wrong-email");
 const wrongPassword = document.getElementById("wrong-password");
-
+const btnOkRegister = document.getElementById('btn-ok-register');
 window.onload = () => {
 	userSesion();
 }
@@ -39,7 +40,10 @@ const showValidateRegisterVisitor = (visitor) => {
 	if (visitor.cel) wrongCel.hidden = true;
   else wrongCel.hidden = false;
 
-  if (visitor.name && visitor.dni && visitor.cel) console.log("todo correcto");
+  if (visitor.name && visitor.dni && visitor.cel) 
+  sectionTakePhotoVisitor.style.display = 'block';
+  sectionRegisterVisitor.style.display = 'none';
+  console.log("todo correcto");
 }
 
 const showValidateLoginAdmin = (admin) => {
@@ -74,4 +78,11 @@ btnToMain.addEventListener("click", () => {
 btnOkLoginAdmin.addEventListener("click", () => {
 	const admin = validateLoginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
 	showValidateLoginAdmin(admin);
+});
+btnOkRegister.addEventListener('click', () => {
+	if (imgPhoto.getAttribute('src') === null) {
+		alert('aun no te has tomado una foto');
+	} else {
+		createVisitor();
+	}
 });

@@ -96,11 +96,37 @@
         </div>
       </form>
     </aside>
+    <aside id="take-photo-visitor" style="display: none">
+      <header>
+        <nav class="navbar navbar-light bg-app big-nav">
+          <a class="navbar-brand lite">
+            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""> Visitor
+          </a>
+        </nav>
+      </header>
+      <form class="container">
+          <div class="app">
+            <video id="camera-stream" style="display: flex"></video>
+            <img id="snap">
+            <p id="error-message"></p>
+            <div class="controls" style="display: flex">
+              <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled"><i class="material-icons">delete</i></a>
+              <a href="#" id="take-photo" title="Tomar Foto"><i class="material-icons">camera_alt</i></a>
+            </div>
+            <canvas style="display: none"></canvas>
+          </div>
+        <div class="align-content-center text-center spaces">
+          <button type="button" class="btn btn-app" id="btn-ok-register">Aceptar</button>
+        </div>
+      </form>
+    </aside>
   </main>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <!-- <script src="views/register-visitor.js"></script>
   <script src="views/login-admin.js"></script> -->
   <script src="firebase/firebase.js"></script>
+  <script src="js/take-photo-visitor.js"></script>
+  <script src="js/create-register-visitor.js"></script>
   <script src="js/data.js"></script>
   <script src="app.js"></script>
 </body>
