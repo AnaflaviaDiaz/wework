@@ -14,6 +14,7 @@ const wrongDni= document.getElementById("wrong-dni");
 const wrongCel = document.getElementById("wrong-cel");
 const wrongEmail = document.getElementById("wrong-email");
 const wrongPassword = document.getElementById("wrong-password");
+const btnSendEmail = document.getElementById("btn-send-email");
 
 window.onload = () => {
 	userSesion();
@@ -74,4 +75,8 @@ btnToMain.addEventListener("click", () => {
 btnOkLoginAdmin.addEventListener("click", () => {
 	const admin = validateLoginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
 	showValidateLoginAdmin(admin);
+});
+
+btnSendEmail.addEventListener("click", () => {
+	location.href = "mailto:"+"anaflaviadmar@gmail.com"+'?cc='+"anaflaviadiazmartel5a@gmail.com"+'&subject='+"probando correos"+'&body='+"probando el detalle del correo";
 });
