@@ -1,9 +1,10 @@
 const video = document.getElementById('camera-stream');
-const imgPhoto = document.querySelector('#snap');
-const controls = document.querySelector('.controls');
-const btnTakePhoto = document.querySelector('#take-photo');
-const btnDeletePhoto = document.querySelector('#delete-photo');
-const errorMessage = document.querySelector('#error-message');
+const imgPhoto = document.getElementById('snap');
+const controls = document.getElementById('controls');
+const btnTakePhoto = document.getElementById('take-photo');
+const btnDeletePhoto = document.getElementById('delete-photo');
+const errorMessage = document.getElementById('error-message');
+const hidden_canvas = document.getElementById('canvass');
 
 // Utilizamos la funcion getUserMedia para obtener la salida de la webcam
 navigator.getMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
@@ -31,7 +32,6 @@ const showVideo = () => {
 }
 
 const takeSnapshot = () => { 
-  const hidden_canvas = document.querySelector('canvas');
   const context = hidden_canvas.getContext('2d');
   const width = video.videoWidth;
   const height = video.videoHeight;
