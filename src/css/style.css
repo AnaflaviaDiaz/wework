@@ -49,3 +49,16 @@
 		padding: 40px 40px;
 	}
 }
+.controls {
+  left: 0;
+  top: 0;
+}
+.app, #camera-stream {
+  width: 320px;
+  height: 320px;
+}
+
+.img-photo {
+  width: 320px;
+  margin-top: 3em;
+}
