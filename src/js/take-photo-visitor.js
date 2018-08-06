@@ -6,6 +6,7 @@ const btnDeletePhoto = document.getElementById('delete-photo');
 const errorMessage = document.getElementById('error-message');
 const hidden_canvas = document.getElementById('canvass');
 const btnAceptRegister = document.getElementById('btn-ok-register');
+let imgF=document.getElementById('download-photo');
 // Utilizamos la funcion getUserMedia para obtener la salida de la webcam
 navigator.getMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 const hideUI = () => {
@@ -59,13 +60,14 @@ if (!navigator.getMedia) {
     }
   );
 }
-btnTakePhoto.addEventListener('click', (event) => { 
+btnTakePhoto.addEventListener('click', (event) => {
   event.preventDefault();
   btnDeletePhoto.hidden = false;
   btnAceptRegister.hidden = false;
   btnTakePhoto.hidden = true;
   const snap = takeSnapshot();
   imgPhoto.setAttribute('src', snap);
+  imgF.href=snap;
   video.style.display = 'none';
   imgPhoto.style.display = 'flex';
   imgPhoto.classList.add('img-photo')
