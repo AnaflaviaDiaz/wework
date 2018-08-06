@@ -4,5 +4,7 @@ window.createVisitor = () => {
     dni: parseInt(txtDniVisitor.value),
     celular: parseInt(txtCelVisitor.value),
     photo: imgPhoto.getAttribute('src'),
-  })
+    visitto: selectWorker.options[selectWorker.selectedIndex].value,
+    date: firebase.database.ServerValue.TIMESTAMP
+  });
 }
