@@ -89,7 +89,8 @@ btnOkRegister.addEventListener('click', () => {
   } else {
 		// createVisitor();
 		sectionTakePhotoVisitor.style.display = 'none';
-		sectionSelectPerson.style.display = "block";
+    sectionSelectPerson.style.display = "block";
+    
   }
 });
 
