@@ -58,9 +58,6 @@
         <div class="align-content-center text-center spaces">
           <button type="button" class="btn btn-app" id="btn-ok-register-visitor">Aceptar</button>
         </div>
-        <div class="align-content-center text-center spaces">
-          <button type="button" class="btn btn-app" id="btn-send-email">Enviar correo</button>
-        </div>
       </form>
     </aside>
 
@@ -97,15 +94,66 @@
           </div>
         </div>
         <div class="align-content-center text-center spaces">
-          <button type="button" class="btn btn-app" id="btn-ok-login-admin">Aceptar</button>
+          <button type="button" class="btn btn-app btn-group-lg" id="btn-ok-login-admin">Aceptar</button>
         </div>
       </form>
+    </aside>
+
+    <aside id="take-photo-visitor" style="display: none">
+      <header>
+        <nav class="navbar navbar-light bg-app big-nav">
+          <a class="navbar-brand lite">
+            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""> Visitor
+          </a>
+        </nav>
+      </header>
+      <form class="container">
+        <div class="app">
+          <video id="camera-stream" style="display: flex"></video>
+          <img id="snap">
+          <p id="error-message"></p>
+          <div id="controls" style="display: flex">
+            <img width="45" height="45" src="../src/img/icons/cubo-de-basura.png" alt="delete" id="delete-photo">
+            <!-- <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled"></a> -->
+            <img width="50" height="50" src="../src/img/icons/camara.png" alt="camara" id="take-photo">
+            <!-- <a href="#" id="take-photo" title="Tomar Foto"></a> -->
+          </div>
+          <canvas id="canvass" style="display: none"></canvas>
+        </div>
+        <div class="align-content-center text-center spaces">
+          <button type="button" class="btn btn-app" id="btn-ok-register">Aceptar</button>
+        </div>
+      </form>
+    </aside>
+
+    <aside id="select-person-to-visit" style="display: none">
+      <header>
+        <nav class="navbar navbar-light bg-app big-nav">
+          <a class="navbar-brand lite">
+            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""> Visitor
+          </a>
+        </nav>
+      </header>
+      <!-- <img src="img/icons/glyphicons-25-parents.png" alt=""> -->
+      <h4 class="big-nav spaces">Selecciona a la persona que deseas visitar, nosotras te pondremos en contacto.</h4>
+      <div class="form-group container">
+        <select class="form-control spaces" name="selección de personas" id="select-person">
+          <option value="">anaflavia</option>
+          <option value="">bella</option>
+          <option value="">noelly</option>
+        </select>
+      </div>
+      <div class="align-content-center text-center spaces">
+        <button type="button" class="btn btn-app" id="btn-send-email">Enviar correo</button>
+      </div>
     </aside>
   </main>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <!-- <script src="views/register-visitor.js"></script>
   <script src="views/login-admin.js"></script> -->
   <script src="firebase/firebase.js"></script>
+  <script src="js/take-photo-visitor.js"></script>
+  <script src="js/create-register-visitor.js"></script>
   <script src="js/data.js"></script>
   <script src="app.js"></script>
 </body>
