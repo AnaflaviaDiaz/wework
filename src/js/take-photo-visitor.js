@@ -1,14 +1,15 @@
 const video = document.getElementById('camera-stream');
 const imgPhoto = document.getElementById('snap');
-const controls = document.getElementById('controls');
+// const controls = document.getElementById('controls');
 const btnTakePhoto = document.getElementById('take-photo');
 const btnDeletePhoto = document.getElementById('delete-photo');
 const errorMessage = document.getElementById('error-message');
 const hidden_canvas = document.getElementById('canvass');
+const btnAceptRegister = document.getElementById('btn-ok-register');
 // Utilizamos la funcion getUserMedia para obtener la salida de la webcam
 navigator.getMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 const hideUI = () => {
-  controls.style.display = 'flex';
+  // controls.style.display = 'flex';
   video.style.display = 'flex';
   errorMessage.style.display = 'none';
 }
@@ -24,7 +25,7 @@ const showMessageError = (errormsg, error) => {
 const showVideo = () => {
   hideUI();
   video.style.display = 'flex';
-  controls.style.display = 'flex';
+  // controls.style.display = 'flex';
 }
 const takeSnapshot = () => { 
   const context = hidden_canvas.getContext('2d');
@@ -60,19 +61,23 @@ if (!navigator.getMedia) {
 }
 btnTakePhoto.addEventListener('click', (event) => { 
   event.preventDefault();
+  btnDeletePhoto.hidden = false;
+  btnAceptRegister.hidden = false;
+  btnTakePhoto.hidden = true;
   const snap = takeSnapshot();
   imgPhoto.setAttribute('src', snap);
   video.style.display = 'none';
   imgPhoto.style.display = 'flex';
   imgPhoto.classList.add('img-photo')
-  // delete_photo_btn.classList.remove('disabled');
   video.pause();
 });
 btnDeletePhoto.addEventListener('click', (event) => {
   event.preventDefault();
+  btnDeletePhoto.hidden = true;
+  btnAceptRegister.hidden = true;
+  btnTakePhoto.hidden = false;
   imgPhoto.setAttribute('src', '');
   imgPhoto.style.display = 'none';
   video.style.display = 'flex';
-  // delete_photo_btn.classList.add('disabled');
   video.play();
 });
