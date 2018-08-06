@@ -11,78 +11,79 @@ const txtCelVisitor = document.getElementById("txt-cel-visitor");
 const txtEmailAdmin = document.getElementById("txt-email-admin");
 const txtPasswordAdmin = document.getElementById("txt-password-admin");
 const wrongName = document.getElementById("wrong-name");
-const wrongDni= document.getElementById("wrong-dni");
+const wrongDni = document.getElementById("wrong-dni");
 const wrongCel = document.getElementById("wrong-cel");
 const wrongEmail = document.getElementById("wrong-email");
 const wrongPassword = document.getElementById("wrong-password");
 const btnOkRegister = document.getElementById('btn-ok-register');
 window.onload = () => {
-	userSesion();
+  userSesion();
 }
 
 const goToLoginAdmin = () => {
-	sectionRegisterVisitor.style.display = "none";
-	sectionLoginAdmin.style.display = "block";
+  sectionRegisterVisitor.style.display = "none";
+  sectionLoginAdmin.style.display = "block";
 }
 
 const goToMain = () => {
-	sectionLoginAdmin.style.display = "none";
-	sectionRegisterVisitor.style.display = "block";
+  sectionLoginAdmin.style.display = "none";
+  sectionRegisterVisitor.style.display = "block";
 }
 
 const showValidateRegisterVisitor = (visitor) => {
-	if (visitor.name) wrongName.hidden = true;
+  if (visitor.name) wrongName.hidden = true;
   else wrongName.hidden = false;
 
   if (visitor.dni) wrongDni.hidden = true;
-	else wrongDni.hidden = false;
+  else wrongDni.hidden = false;
 
-	if (visitor.cel) wrongCel.hidden = true;
+  if (visitor.cel) wrongCel.hidden = true;
   else wrongCel.hidden = false;
 
-  if (visitor.name && visitor.dni && visitor.cel) 
-  sectionTakePhotoVisitor.style.display = 'block';
-  sectionRegisterVisitor.style.display = 'none';
-  console.log("todo correcto");
+  if (visitor.name && visitor.dni && visitor.cel) {
+    sectionTakePhotoVisitor.style.display = 'block';
+    sectionRegisterVisitor.style.display = 'none';
+    console.log("todo correcto");
+  }
 }
 
 const showValidateLoginAdmin = (admin) => {
-	if (admin.email) wrongEmail.hidden = true;
+  if (admin.email) wrongEmail.hidden = true;
   else wrongEmail.hidden = false;
 
   if (admin.password) wrongPassword.hidden = true;
-	else wrongPassword.hidden = false;
+  else wrongPassword.hidden = false;
 
   if (admin.email && admin.password) {
-		const aprroved = loginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
-		aprroved.then(() => {
-			console.log("se puede");
-		}).catch(() => {
-			wrongPassword.hidden = false;
-		});
-	};
+    const aprroved = loginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
+    aprroved.then(() => {
+      console.log("se puede");
+    }).catch(() => {
+      wrongPassword.hidden = false;
+    });
+  };
 }
 
 // botones
 btnToLoginAdmin.addEventListener("click", () => {
-	goToLoginAdmin();
+  goToLoginAdmin();
 });
 btnOkRegisterVisitor.addEventListener("click", () => {
-	const visitor = validateRegisterVisitor(txtNameVisitor.value, txtDniVisitor.value, txtCelVisitor.value);
-	showValidateRegisterVisitor(visitor);
+  const visitor = validateRegisterVisitor(txtNameVisitor.value, txtDniVisitor.value, txtCelVisitor.value);
+  showValidateRegisterVisitor(visitor);
 });
 
 btnToMain.addEventListener("click", () => {
-	goToMain();
+  goToMain();
 });
 btnOkLoginAdmin.addEventListener("click", () => {
-	const admin = validateLoginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
-	showValidateLoginAdmin(admin);
+  const admin = validateLoginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
+  showValidateLoginAdmin(admin);
 });
 btnOkRegister.addEventListener('click', () => {
-	if (imgPhoto.getAttribute('src') === null) {
-		alert('aun no te has tomado una foto');
-	} else {
-		createVisitor();
-	}
+  if (imgPhoto.getAttribute('src') === null) {
+    alert('aun no te has tomado una foto');
+  } else {
+    createVisitor();
+  }
 });

@@ -3,6 +3,6 @@ window.createVisitor = () => {
     name: txtNameVisitor.value,
     dni: parseInt(txtDniVisitor.value),
     celular: parseInt(txtCelVisitor.value),
-    photo: imgPhoto.getAttribute('src'),
-  })
+    photo: imgPhoto.getAttribute('src')
+  });
 }

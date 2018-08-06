@@ -98,6 +98,7 @@
         </div>
       </form>
     </aside>
+
     <aside id="take-photo-visitor" style="display: none">
       <header>
         <nav class="navbar navbar-light bg-app big-nav">
@@ -107,16 +108,18 @@
         </nav>
       </header>
       <form class="container">
-          <div class="app">
-            <video id="camera-stream" style="display: flex"></video>
-            <img id="snap">
-            <p id="error-message"></p>
-            <div id="controls" style="display: flex">
-              <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled"><i class="material-icons">delete</i></a>
-              <a href="#" id="take-photo" title="Tomar Foto"><i class="material-icons">camera_alt</i></a>
-            </div>
-            <canvas id="canvass" style="display: none"></canvas>
+        <div class="app">
+          <video id="camera-stream" style="display: flex"></video>
+          <img id="snap">
+          <p id="error-message"></p>
+          <div id="controls" style="display: flex">
+            <img width="50" height="50" src="../src/img/icons/cubo-de-basura.png" alt="delete" id="delete-photo">
+            <!-- <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled"></a> -->
+            <img width="50" height="50" src="../src/img/icons/camara.png" alt="camara" id="take-photo">
+            <!-- <a href="#" id="take-photo" title="Tomar Foto"></a> -->
           </div>
+          <canvas id="canvass" style="display: none"></canvas>
+        </div>
         <div class="align-content-center text-center spaces">
           <button type="button" class="btn btn-app" id="btn-ok-register">Aceptar</button>
         </div>
