@@ -59,7 +59,7 @@ if (!navigator.getMedia) {
     }
   );
 }
-btnTakePhoto.addEventListener('click', (event) => { 
+btnTakePhoto.addEventListener('click', (event) => {
   event.preventDefault();
   btnDeletePhoto.hidden = false;
   btnAceptRegister.hidden = false;
