@@ -1,24 +1,24 @@
 const sectionTakePhotoVisitor = document.getElementById('take-photo-visitor');
-const sectionRegisterVisitor = document.getElementById("register-visitor");
-const sectionLoginAdmin = document.getElementById("login-admin");
-const sectionSelectPerson = document.getElementById("select-person-to-visit");
-const btnToLoginAdmin = document.getElementById("btn-to-loggin-admin");
-const btnOkRegisterVisitor = document.getElementById("btn-ok-register-visitor");
-const btnToMain = document.getElementById("btn-to-main");
-const btnOkLoginAdmin = document.getElementById("btn-ok-login-admin");
-const txtNameVisitor = document.getElementById("txt-name-visitor");
-const txtDniVisitor = document.getElementById("txt-dni-visitor");
-const txtCelVisitor = document.getElementById("txt-cel-visitor");
-const txtEmailAdmin = document.getElementById("txt-email-admin");
-const txtPasswordAdmin = document.getElementById("txt-password-admin");
-const wrongName = document.getElementById("wrong-name");
-const wrongDni = document.getElementById("wrong-dni");
-const wrongCel = document.getElementById("wrong-cel");
-const wrongEmail = document.getElementById("wrong-email");
-const wrongPassword = document.getElementById("wrong-password");
-const btnSendEmail = document.getElementById("btn-send-email");
+const sectionRegisterVisitor = document.getElementById('register-visitor');
+const sectionLoginAdmin = document.getElementById('login-admin');
+const sectionSelectPerson = document.getElementById('select-person-to-visit');
+const btnToLoginAdmin = document.getElementById('btn-to-loggin-admin');
+const btnOkRegisterVisitor = document.getElementById('btn-ok-register-visitor');
+const btnToMain = document.getElementById('btn-to-main');
+const btnOkLoginAdmin = document.getElementById('btn-ok-login-admin');
+const txtNameVisitor = document.getElementById('txt-name-visitor');
+const txtDniVisitor = document.getElementById('txt-dni-visitor');
+const txtCelVisitor = document.getElementById('txt-cel-visitor');
+const txtEmailAdmin = document.getElementById('txt-email-admin');
+const txtPasswordAdmin = document.getElementById('txt-password-admin');
+const wrongName = document.getElementById('wrong-name');
+const wrongDni = document.getElementById('wrong-dni');
+const wrongCel = document.getElementById('wrong-cel');
+const wrongEmail = document.getElementById('wrong-email');
+const wrongPassword = document.getElementById('wrong-password');
+const btnSendEmail = document.getElementById('btn-send-email');
 const btnOkRegister = document.getElementById('btn-ok-register');
-const selectWorker = document.getElementById("select-worker");
+const selectWorker = document.getElementById('select-worker');
 let emailValue;
 
 window.onload = () => {
@@ -26,13 +26,13 @@ window.onload = () => {
 }
 
 const goToLoginAdmin = () => {
-  sectionRegisterVisitor.style.display = "none";
-  sectionLoginAdmin.style.display = "block";
+  sectionRegisterVisitor.style.display = 'none';
+  sectionLoginAdmin.style.display = 'block';
 }
 
 const goToMain = () => {
-  sectionLoginAdmin.style.display = "none";
-  sectionRegisterVisitor.style.display = "block";
+  sectionLoginAdmin.style.display = 'none';
+  sectionRegisterVisitor.style.display = 'block';
 }
 
 const showValidateRegisterVisitor = (visitor) => {
@@ -48,7 +48,7 @@ const showValidateRegisterVisitor = (visitor) => {
   if (visitor.name && visitor.dni && visitor.cel) {
     sectionTakePhotoVisitor.style.display = 'block';
     sectionRegisterVisitor.style.display = 'none';
-    console.log("todo correcto");
+    console.log('todo correcto');
   }
 }
 
@@ -62,7 +62,7 @@ const showValidateLoginAdmin = (admin) => {
   if (admin.email && admin.password) {
     const aprroved = loginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
     aprroved.then(() => {
-      console.log("se puede");
+      console.log('se puede');
     }).catch(() => {
       wrongPassword.hidden = false;
     });
@@ -76,7 +76,7 @@ const getWorkers = () => {
     if (xhr.readyState == 4 && xhr.status == 200) {
       let xhrWorkers = JSON.parse(xhr.responseText);
       xhrWorkers.map((worker) => {
-        selectWorker.innerHTML += `<option value="${worker.email}">${worker.name}</option>`;
+        selectWorker.innerHTML += `<option value='${worker.email}'>${worker.name}</option>`;
       });
     }
   }
@@ -84,18 +84,18 @@ const getWorkers = () => {
 }
 
 // botones
-btnToLoginAdmin.addEventListener("click", () => {
+btnToLoginAdmin.addEventListener('click', () => {
   goToLoginAdmin();
 });
-btnOkRegisterVisitor.addEventListener("click", () => {
+btnOkRegisterVisitor.addEventListener('click', () => {
   const visitor = validateRegisterVisitor(txtNameVisitor.value, txtDniVisitor.value, txtCelVisitor.value);
   showValidateRegisterVisitor(visitor);
 });
 
-btnToMain.addEventListener("click", () => {
+btnToMain.addEventListener('click', () => {
   goToMain();
 });
-btnOkLoginAdmin.addEventListener("click", () => {
+btnOkLoginAdmin.addEventListener('click', () => {
   const admin = validateLoginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
   showValidateLoginAdmin(admin);
 });
@@ -106,17 +106,19 @@ btnOkRegister.addEventListener('click', () => {
     // createVisitor();
     getWorkers();
 		sectionTakePhotoVisitor.style.display = 'none';
-    sectionSelectPerson.style.display = "block";
+    sectionSelectPerson.style.display = 'block';
   }
 });
-selectWorker.addEventListener("change", () => {
+selectWorker.addEventListener('change', () => {
   emailValue=selectWorker.options[selectWorker.selectedIndex].value;
   console.log(selectWorker.options[selectWorker.selectedIndex].value);
 });
-btnSendEmail.addEventListener("click", () => {
-   createVisitor();
+btnSendEmail.addEventListener('click', () => {
+  createVisitor();
   sendDataMandrill(emailValue);
-	console.log("Guardando en db")
-/* 	location.href = "mailto:"+"anaflaviadmar@gmail.com"+'?cc='+"anaflaviadiazmartel5a@gmail.com"+'&subject='+"probando correos"+'&body='+"probando el detalle del correo";
- */});
-
+  console.log('Guardando en db');
+  swal('Se envió el correo, espera la respuesta por favor', {
+    icon: 'success',
+  }).then(() => window.location.href = '../src/');
+  // location.href = 'mailto:'+'anaflaviadmar@gmail.com'+'?cc='+'anaflaviadiazmartel5a@gmail.com'+'&subject='+'probando correos'+'&body='+'probando el detalle del correo';
+});
