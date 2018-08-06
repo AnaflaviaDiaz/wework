@@ -114,7 +114,7 @@ selectWorker.addEventListener("change", () => {
   console.log(selectWorker.options[selectWorker.selectedIndex].value);
 });
 btnSendEmail.addEventListener("click", () => {
-  /* createVisitor(); */
+   createVisitor();
   sendDataMandrill(emailValue);
 	console.log("Guardando en db")
 /* 	location.href = "mailto:"+"anaflaviadmar@gmail.com"+'?cc='+"anaflaviadiazmartel5a@gmail.com"+'&subject='+"probando correos"+'&body='+"probando el detalle del correo";
