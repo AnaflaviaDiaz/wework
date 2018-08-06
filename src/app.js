@@ -18,6 +18,7 @@ const wrongEmail = document.getElementById("wrong-email");
 const wrongPassword = document.getElementById("wrong-password");
 const btnSendEmail = document.getElementById("btn-send-email");
 const btnOkRegister = document.getElementById('btn-ok-register');
+const selectWorker = document.getElementById("select-worker");
 
 window.onload = () => {
   userSesion();
@@ -67,6 +68,20 @@ const showValidateLoginAdmin = (admin) => {
   };
 }
 
+const getWorkers = () => {
+  let xhr = new XMLHttpRequest();
+  xhr.open('GET', 'data/workers.json', true);
+  xhr.onload = () => {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      let xhrWorkers = JSON.parse(xhr.responseText);
+      xhrWorkers.map((worker) => {
+        selectWorker.innerHTML += `<option value="${worker.email}">${worker.name}</option>`;
+      });
+    }
+  }
+  xhr.send();
+}
+
 // botones
 btnToLoginAdmin.addEventListener("click", () => {
   goToLoginAdmin();
@@ -87,7 +102,8 @@ btnOkRegister.addEventListener('click', () => {
   if (imgPhoto.getAttribute('src') === null) {
     alert('aun no te has tomado una foto');
   } else {
-		// createVisitor();
+    // createVisitor();
+    getWorkers();
 		sectionTakePhotoVisitor.style.display = 'none';
 		sectionSelectPerson.style.display = "block";
   }
@@ -97,4 +113,8 @@ btnSendEmail.addEventListener("click", () => {
 	createVisitor();
 	console.log("Guardando en db")
 	location.href = "mailto:"+"anaflaviadmar@gmail.com"+'?cc='+"anaflaviadiazmartel5a@gmail.com"+'&subject='+"probando correos"+'&body='+"probando el detalle del correo";
+});
+
+selectWorker.addEventListener("change", () => {
+  console.log(selectWorker.options[selectWorker.selectedIndex].value);
 });
