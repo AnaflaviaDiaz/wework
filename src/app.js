@@ -19,6 +19,7 @@ const wrongPassword = document.getElementById("wrong-password");
 const btnSendEmail = document.getElementById("btn-send-email");
 const btnOkRegister = document.getElementById('btn-ok-register');
 const selectWorker = document.getElementById("select-worker");
+let emailValue;
 
 window.onload = () => {
   userSesion();
@@ -106,16 +107,16 @@ btnOkRegister.addEventListener('click', () => {
     getWorkers();
 		sectionTakePhotoVisitor.style.display = 'none';
     sectionSelectPerson.style.display = "block";
-    
   }
 });
-
-btnSendEmail.addEventListener("click", () => {
-	createVisitor();
-	console.log("Guardando en db")
-	location.href = "mailto:"+"anaflaviadmar@gmail.com"+'?cc='+"anaflaviadiazmartel5a@gmail.com"+'&subject='+"probando correos"+'&body='+"probando el detalle del correo";
-});
-
 selectWorker.addEventListener("change", () => {
+  emailValue=selectWorker.options[selectWorker.selectedIndex].value;
   console.log(selectWorker.options[selectWorker.selectedIndex].value);
 });
+btnSendEmail.addEventListener("click", () => {
+  /* createVisitor(); */
+  sendDataMandrill(emailValue);
+	console.log("Guardando en db")
+/* 	location.href = "mailto:"+"anaflaviadmar@gmail.com"+'?cc='+"anaflaviadiazmartel5a@gmail.com"+'&subject='+"probando correos"+'&body='+"probando el detalle del correo";
+ */});
+
