@@ -27,12 +27,11 @@ const showVideo = () => {
   video.style.display = 'flex';
   // controls.style.display = 'flex';
 }
-const takeSnapshot = () => { 
+const takeSnapshot = () => {
   const context = hidden_canvas.getContext('2d');
   const width = video.videoWidth;
   const height = video.videoHeight;
- 
-  if (width && height) { 
+  if (width && height) {
     hidden_canvas.width = width;
     hidden_canvas.height = height;
     context.drawImage(video, 0, 0, width, height);
@@ -48,7 +47,7 @@ if (!navigator.getMedia) {
     {
       video: true,
     }, (stream) => {
-      // A nuestro componente video le establecemos el src 
+      // A nuestro componente video le establecemos el src
       video.src = window.URL.createObjectURL(stream);
       video.play();
       video.onplay = () => {
