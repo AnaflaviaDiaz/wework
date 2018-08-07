@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 window.userSesion = () => {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-      window.location.href = "../src/views/wall-admin.html";
+      window.location.href = "views/wall-admin.html";
     }
   });
 }
