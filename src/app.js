@@ -117,7 +117,9 @@ btnSendEmail.addEventListener('click', () => {
   createVisitor();
   sendDataMandrill(emailValue);
   console.log('Guardando en db');
-  swal('Se envió el correo, espera la respuesta por favor', {
+  swal({
+    title: 'Correo enviado',
+    text: 'Se envió el correo, espera la respuesta por favor',
     icon: 'success',
   }).then(() => window.location.href = '../src/');
   // location.href = 'mailto:'+'anaflaviadmar@gmail.com'+'?cc='+'anaflaviadiazmartel5a@gmail.com'+'&subject='+'probando correos'+'&body='+'probando el detalle del correo';
