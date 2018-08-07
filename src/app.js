@@ -21,6 +21,14 @@ const btnOkRegister = document.getElementById('btn-ok-register');
 const selectWorker = document.getElementById('select-worker');
 let emailValue;
 let nameVisited='';
+const video = document.getElementById('camera-stream');
+const imgPhoto = document.getElementById('snap');
+// const controls = document.getElementById('controls');
+const btnTakePhoto = document.getElementById('take-photo');
+const btnDeletePhoto = document.getElementById('delete-photo');
+const errorMessage = document.getElementById('error-message');
+const hidden_canvas = document.getElementById('canvass');
+const btnAceptRegister = document.getElementById('btn-ok-register');
 
 window.onload = () => {
   userSesion();
@@ -92,6 +100,8 @@ btnToLoginAdmin.addEventListener('click', () => {
 btnOkRegisterVisitor.addEventListener('click', () => {
   const visitor = validateRegisterVisitor(txtNameVisitor.value, txtDniVisitor.value, txtCelVisitor.value);
   showValidateRegisterVisitor(visitor);
+  video.play();
+  showVideo();
 });
 
 btnToMain.addEventListener('click', () => {
@@ -127,3 +137,25 @@ btnSendEmail.addEventListener('click', () => {
   }).then(() => window.location.href = '');
   // location.href = 'mailto:'+'anaflaviadmar@gmail.com'+'?cc='+'anaflaviadiazmartel5a@gmail.com'+'&subject='+'probando correos'+'&body='+'probando el detalle del correo';
 });
+btnTakePhoto.addEventListener('click', (event) => {
+	event.preventDefault();
+	btnDeletePhoto.hidden = false;
+	btnAceptRegister.hidden = false;
+	btnTakePhoto.hidden = true;
+	const snap = takeSnapshot();
+	imgPhoto.setAttribute('src', snap);
+	video.style.display = 'none';
+	imgPhoto.style.display = 'flex';
+	imgPhoto.classList.add('img-photo')
+	video.pause();
+  });
+  btnDeletePhoto.addEventListener('click', (event) => {
+	event.preventDefault();
+	btnDeletePhoto.hidden = true;
+	btnAceptRegister.hidden = true;
+	btnTakePhoto.hidden = false;
+	imgPhoto.setAttribute('src', '');
+	imgPhoto.style.display = 'none';
+	video.style.display = 'flex';
+	video.play();
+  });
