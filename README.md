@@ -114,7 +114,7 @@ El control que lleva la empresa consta de 2 filtros:
 
 Cuando el trabajador acepta la visita, se comunica con la recepción de Comunal para que dejen pasar al visitante a las instalaciones o el trabajador se acerca a la recepción a hablar con el visitante. Sin embargo, cuando un trabajador no puede atender la visita, se le comunica a la recepción de Comunal que por el momento la persona a la que busca no lo puede atender.
 
-Se entrevistó a [Diego e Ivanna] (https://drive.google.com/open?id=1rplyFnKtUEJGoIp_Su7YqVXgqV-YcnWO), trabajadores de Comunal Coworking, se le hicieron preguntas como:
+Se entrevistó a [Diego e Ivanna](https://drive.google.com/open?id=1rplyFnKtUEJGoIp_Su7YqVXgqV-YcnWO), trabajadores de Comunal Coworking, se le hicieron preguntas como:
 * ¿Qué datos registran de los visitantes? La respuesta fue que en la entrada se le pida el DNI por parte de la seguridad del edificio y en recepción le piden el nombre de la entidad o individuo que desean visitar.
 
 * ¿Cómo controlaban qué persona entraba? La respuesta fue que seguridad llevaba un control con nombres y DNI, pero en recepción de Comunal no era necesario porque había un trato directo con el visitante.
