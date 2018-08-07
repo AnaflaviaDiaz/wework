@@ -124,6 +124,6 @@ btnSendEmail.addEventListener('click', () => {
     title: 'Correo enviado',
     text: 'Se envió el correo, espera la respuesta por favor',
     icon: 'success',
-  }).then(() => window.location.href = '../src/');
+  }).then(() => window.location.href = '../');
   // location.href = 'mailto:'+'anaflaviadmar@gmail.com'+'?cc='+'anaflaviadiazmartel5a@gmail.com'+'&subject='+'probando correos'+'&body='+'probando el detalle del correo';
 });
