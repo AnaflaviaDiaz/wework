@@ -131,7 +131,7 @@ Link de prototipo de alta fidelidad: [Visitor Figma](https://www.figma.com/proto
 
 Link de la aplicación en gh-pages: [Visitor Gh-Pages](https://anaflaviadiaz.github.io/wework/src/)
 
-Link de la aplicación con hosting: [Visitor Hosting](https://anaflaviadiaz.github.io/wework/src/)
+Link de la aplicación con hosting: [Visitor Hosting](wework-731bf.firebaseapp.com)
 
 El equipo trabajó bajo las historias de usuario:
 
