@@ -105,13 +105,16 @@ btnOkRegister.addEventListener('click', () => {
   } else {
     // createVisitor();
     getWorkers();
-		sectionTakePhotoVisitor.style.display = 'none';
+    sectionTakePhotoVisitor.style.display = 'none';
     sectionSelectPerson.style.display = 'block';
   }
 });
 selectWorker.addEventListener('change', () => {
-  emailValue=selectWorker.options[selectWorker.selectedIndex].value;
-  console.log(selectWorker.options[selectWorker.selectedIndex].value);
+  if (selectWorker.options[selectWorker.selectedIndex].value !== "") {
+    btnSendEmail.disabled = false;
+    emailValue = selectWorker.options[selectWorker.selectedIndex].value;
+    console.log(selectWorker.options[selectWorker.selectedIndex].value);
+  } else btnSendEmail.disabled = true;
 });
 btnSendEmail.addEventListener('click', () => {
   createVisitor();
