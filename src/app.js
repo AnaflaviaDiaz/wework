@@ -118,7 +118,7 @@ selectWorker.addEventListener('change', () => {
 });
 btnSendEmail.addEventListener('click', () => {
   createVisitor();
-  sendDataMandrill(emailValue);
+  sendDataMandrill(emailValue,txtNameVisitor.value,parseInt(txtCelVisitor.value));
   console.log('Guardando en db');
   swal({
     title: 'Correo enviado',
