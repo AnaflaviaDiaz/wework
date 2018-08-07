@@ -20,6 +20,7 @@ const btnSendEmail = document.getElementById('btn-send-email');
 const btnOkRegister = document.getElementById('btn-ok-register');
 const selectWorker = document.getElementById('select-worker');
 let emailValue;
+let nameVisited='';
 
 window.onload = () => {
   userSesion();
@@ -76,6 +77,7 @@ const getWorkers = () => {
     if (xhr.readyState == 4 && xhr.status == 200) {
       let xhrWorkers = JSON.parse(xhr.responseText);
       xhrWorkers.map((worker) => {
+        nameVisited=worker.name;
         selectWorker.innerHTML += `<option value='${worker.email}'>${worker.name}</option>`;
       });
     }
@@ -113,13 +115,11 @@ selectWorker.addEventListener('change', () => {
   if (selectWorker.options[selectWorker.selectedIndex].value !== "") {
     btnSendEmail.disabled = false;
     emailValue = selectWorker.options[selectWorker.selectedIndex].value;
-    console.log(selectWorker.options[selectWorker.selectedIndex].value);
   } else btnSendEmail.disabled = true;
 });
 btnSendEmail.addEventListener('click', () => {
   createVisitor();
-  sendDataMandrill(emailValue,txtNameVisitor.value,parseInt(txtCelVisitor.value));
-  console.log('Guardando en db');
+  sendDataMandrill(emailValue,nameVisited,parseInt(txtCelVisitor.value));
   swal({
     title: 'Correo enviado',
     text: 'Se envió el correo, espera la respuesta por favor',

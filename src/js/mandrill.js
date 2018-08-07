@@ -4,14 +4,21 @@ let dataEmail={
     'message': {
         'html': `
             <div style='border:1px solid #777'>
-                <h1 style='background:#072240; color: #fff; width: 100%; text-align: center;'>Nueva Visita</h1>
+                <h2 style='
+                background:#072240;
+                color: #fff;
+                width: 100%;
+                text-align: center;
+                top:0;
+                padding: 1em 0em;
+                box-shadow: 0px 2px 10px 0px #c5c5c5;
+                '>Nueva Visita</h2>
                 <h3 style='text-align: center'>Hola ${name}</h3>
-                <p style='text-align: center'>${txtNameVisitor.value}" te quiere visitar, puede ser importante</p>
-                <p style='text-align: center'>Si deseas llámalo: Nro </p>
-                <strong>${call}</strong>
+                <p style='text-align: center'><strong>${txtNameVisitor.value}</strong> esta en sala de espera. Dale la bienvenida!!</p>
+                <p style='text-align: center'> o contáctate con su número de celular <strong'>${call}</strong> </p>
             <div>`,
         'text': 'de Visitor',
-        'subject': 'nueva visita',
+        'subject': 'Nueva visita',
         'from_email': 'noely.alis209@laboratoria.la',
         'from_name': 'Visitor',
         'to': [

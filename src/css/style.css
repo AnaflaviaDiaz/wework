@@ -1,9 +1,18 @@
 .btn-app {
   color: #fff;
+  padding-bottom: .7em;
   background-color: #072240;
   border-color: #072240
 }
-
+header{
+   box-shadow: 1px 1px 14px 0px #37383a87;
+}
+.swal-button{
+  background-color: #072240 !important;
+}
+.swal-icon--success__line {
+  background-color:  #072240 !important;
+}
 .bg-app {
   background-color: #072240 !important;
 }
@@ -21,11 +30,10 @@
 
 .ligth {
   background-color: #f1f0f0 !important;
-
 }
 
 .spaces {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -49,42 +57,69 @@
   text-align: justify;
 }
 
-@media (min-width:750px) and (max-width:800px) {
-  #big-nav {
-    padding: 40px 40px;
-  }
-}
-
-@media (min-width:801px) and (max-width:1400px) {
-  /* .app,
-  #camera-stream {
-    margin-top: 20px;
-    width: 80% !important;
-    height: auto;
-  }
-
-  .img-photo {
-    margin-top: 20px;
-    width: 80% !important;
-    height: auto;
-  } */
-}
-
-
 .controls {
   left: 0;
   top: 0;
 }
-
 .app,
 #camera-stream {
-  margin-top: 20px;
+  margin-top: 30px;
   width: 100%;
   height: auto;
 }
-
+#camera-stream{
+  box-shadow: 1px 5px 14px 0px #37383a87;
+}
 .img-photo {
   width: 100%;
   height: auto;
-  margin-top: 3em;
+  margin-top: 30px;
 }
+.container{
+margin-top: 30px;
+}
+#btn-logout-admin:hover, #btn-to-loggin-admin:hover,#btn-to-main:hover{
+  background: #fff;
+  color:#072240;
+  -webkit-transition: all .50s ease-in-out;
+  -o-transition: all .50s ease-in-out;
+  transition: all .50s ease-in-out;
+}
+tr:hover{
+cursor: pointer;
+}
+@media (min-width:750px) and (max-width:800px) {
+  #big-nav {
+    padding: 40px 40px;
+  }
+  #camera-stream {
+    width: 70%;
+    margin: 20px 15%;
+    }
+  .img-photo {
+    width: 50%;
+    margin: 0px 25% 30px 22%;
+    }
+}
+
+@media (min-width:801px) and (max-width:1400px) {
+
+  #camera-stream {
+    margin: 0px 25% 0px 23%;
+    width: 50%;
+  }
+  .container {
+    width: 50%;
+    margin: 30px 25%;
+  }
+  .img-photo {
+    margin-top: 1em;
+    width: 50%;
+    margin: 0px 25% 30px 22%;
+}
+.spaces {
+  margin-top: 0px;
+}
+}
+
+
