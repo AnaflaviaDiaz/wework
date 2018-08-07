@@ -17,6 +17,17 @@ window.userSesion = () => {
   });
 }
 
+window.getPublicPost = () => {
+  const rootRef = firebase.database().ref();
+  const list = rootRef.child('visitors');
+  list.once("value", (visitor) => {
+    const valVisitor = Object.values(visitor.val());
+    valVisitor.map(visitor => {
+      tableVisitor(visitor);
+    });
+  });
+}
+
 window.loginAdmin = (email, pass) => {
   return firebase.auth().signInWithEmailAndPassword(email, pass)
 }
