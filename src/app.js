@@ -21,6 +21,13 @@ const btnOkRegister = document.getElementById('btn-ok-register');
 const selectWorker = document.getElementById('select-worker');
 let emailValue;
 let nameVisited='';
+const video = document.getElementById('camera-stream');
+const imgPhoto = document.getElementById('snap');
+const btnTakePhoto = document.getElementById('take-photo');
+const btnDeletePhoto = document.getElementById('delete-photo');
+const errorMessage = document.getElementById('error-message');
+const hidden_canvas = document.getElementById('canvass');
+const btnAceptRegister = document.getElementById('btn-ok-register');
 
 window.onload = () => {
   userSesion();
@@ -75,7 +82,6 @@ const getWorkers = () => {
     if (xhr.readyState == 4 && xhr.status == 200) {
       let xhrWorkers = JSON.parse(xhr.responseText);
       xhrWorkers.map((worker) => {
-        nameVisited=worker.name;
         selectWorker.innerHTML += `<option value='${worker.email}'>${worker.name}</option>`;
       });
     }
@@ -89,6 +95,8 @@ btnToLoginAdmin.addEventListener('click', () => {
 btnOkRegisterVisitor.addEventListener('click', () => {
   const visitor = validateRegisterVisitor(txtNameVisitor.value, txtDniVisitor.value, txtCelVisitor.value);
   showValidateRegisterVisitor(visitor);
+   video.play();
+  showVideo();
 });
 
 btnToMain.addEventListener('click', () => {
@@ -111,6 +119,7 @@ selectWorker.addEventListener('change', () => {
   if (selectWorker.options[selectWorker.selectedIndex].value !== "") {
     btnSendEmail.disabled = false;
     emailValue = selectWorker.options[selectWorker.selectedIndex].value;
+    nameVisited = selectWorker.options[selectWorker.selectedIndex].textContent;
   } else btnSendEmail.disabled = true;
 });
 btnSendEmail.addEventListener('click', () => {
@@ -121,4 +130,26 @@ btnSendEmail.addEventListener('click', () => {
     text: 'Se envió el correo, espera la respuesta por favor',
     icon: 'success',
   }).then(() => window.location.href = '');
+});
+btnTakePhoto.addEventListener('click', (event) => {
+	event.preventDefault();
+	btnDeletePhoto.hidden = false;
+	btnAceptRegister.hidden = false;
+	btnTakePhoto.hidden = true;
+	const snap = takeSnapshot();
+	imgPhoto.setAttribute('src', snap);
+	video.style.display = 'none';
+	imgPhoto.style.display = 'flex';
+	imgPhoto.classList.add('img-photo')
+	video.pause();
+});
+btnDeletePhoto.addEventListener('click', (event) => {
+	event.preventDefault();
+	btnDeletePhoto.hidden = true;
+	btnAceptRegister.hidden = true;
+	btnTakePhoto.hidden = false;
+	imgPhoto.setAttribute('src', '');
+	imgPhoto.style.display = 'none';
+	video.style.display = 'flex';
+	video.play();
 });

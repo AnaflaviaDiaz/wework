@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <title>Visitor</title>
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="../src/img/icons/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!-- <link rel="shortcut icon" href="img/icons/id-badge.svg" type="image/svg"> -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="../src/img/icons/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
-
 <body>
   <main>
     <aside id="register-visitor">
       <header id="header-principal">
         <nav class="navbar navbar-light bg-app big-nav">
           <a class="navbar-brand lite">
-            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""> Visitor
+            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""/> Visitor
           </a>
           <form class="form-inline">
             <button type="button" class="btn btn-outline-lite my-2 my-sm-0" id="btn-to-loggin-admin">Administrador</button>
@@ -36,21 +33,21 @@
         </div>
         <div class="form-group spaces">
           <label>Nombre Completo</label>
-          <input id="txt-name-visitor" type="text" class="form-control" placeholder="Escribe tu nombre completo">
+          <input id="txt-name-visitor" type="text" class="form-control" placeholder="Escribe tu nombre completo"/>
           <div class="text-center align-content-center no-spaces" id="wrong-name" hidden>
             <label class="wrong-data">el nombre no es válido</label>
           </div>
         </div>
         <div class="form-group spaces">
           <label>DNI</label>
-          <input id="txt-dni-visitor" type="number" class="form-control" placeholder="Escribe tu DNI">
+          <input id="txt-dni-visitor" type="number" class="form-control" placeholder="Escribe tu DNI"/>
           <div class="text-center align-content-center no-spaces" id="wrong-dni" hidden>
             <label class="wrong-data">el DNI no es válido</label>
           </div>
         </div>
         <div class="form-group spaces">
           <label>Celular</label>
-          <input id="txt-cel-visitor" type="number" class="form-control" placeholder="Escribe tu número de celular">
+          <input id="txt-cel-visitor" type="number" class="form-control" placeholder="Escribe tu número de celular"/>
           <div class="text-center align-content-center" id="wrong-cel" hidden>
             <label class="wrong-data">el número de celular no es válido</label>
           </div>
@@ -65,7 +62,7 @@
       <header>
         <nav class="navbar navbar-light bg-app big-nav">
           <a class="navbar-brand lite">
-            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""> Visitor
+            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""/> Visitor
           </a>
           <form class="form-inline">
             <button type="button" class="btn btn-outline-lite my-2 my-sm-0" id="btn-to-main">Registrar Visita</button>
@@ -77,18 +74,18 @@
           <h2 class="text-center">Inicia Sesión</h2>
         </div>
         <div class="align-content-center text-center spaces">
-          <img src="img/icons/telefono-inteligente.png" alt="icon">
+          <img src="img/icons/telefono-inteligente.png" alt="icon"/>
         </div>
         <div class="form-group spaces">
           <label>Correo Electrónico</label>
-          <input type="email" class="form-control" placeholder="Escribe tu email" id="txt-email-admin">
+          <input type="email" class="form-control" placeholder="Escribe tu email" id="txt-email-admin"/>
           <div class="text-center align-content-center no-spaces" id="wrong-email" hidden>
             <label class="wrong-data">el correo electrónico no es correcta</label>
           </div>
         </div>
         <div class="form-group spaces">
           <label>Contraseña</label>
-          <input type="password" class="form-control" placeholder="Escribe tu contraseña" id="txt-password-admin">
+          <input type="password" class="form-control" placeholder="Escribe tu contraseña" id="txt-password-admin"/>
           <div class="text-center align-content-center" id="wrong-password" hidden>
             <label class="wrong-data">la contraseña no es correcta</label>
           </div>
@@ -98,12 +95,11 @@
         </div>
       </form>
     </aside>
-
     <aside id="take-photo-visitor" style="display: none">
       <header>
         <nav class="navbar navbar-light bg-app big-nav">
           <a class="navbar-brand lite">
-            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""> Visitor
+            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""/> Visitor
           </a>
         </nav>
       </header>
@@ -112,7 +108,7 @@
           <div class="col"></div>
           <div class="col-11">
             <video id="camera-stream" style="display: flex"></video>
-            <img id="snap">
+            <img id="snap" src="img/icons/glyphicons-25-parents.png" alt="foto" style="display: none"/>
             <p id="error-message"></p>
             <canvas id="canvass" style="display: none"></canvas>
           </div>
@@ -121,16 +117,15 @@
         <div class="align-content-center text-center spaces">
           <button type="button" class="btn btn-app btn-lg" id="delete-photo" hidden>Volver</button>
           <button type="button" class="btn btn-app btn-lg" id="btn-ok-register" hidden>Aceptar</button>
-          <img width="50" height="50" src="img/icons/camara.png" alt="camara" id="take-photo">
+          <img width="50" height="50" src="img/icons/camara.png" alt="camara" id="take-photo"/>
         </div>
       </form>
     </aside>
-
     <aside id="select-person-to-visit" style="display: none">
       <header>
         <nav class="navbar navbar-light bg-app big-nav">
           <a class="navbar-brand lite">
-            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""> Visitor
+            <img src="img/icons/identificacion-de-visitante.png" width="30" height="30" class="d-inline-block align-top" alt=""/> Visitor
           </a>
         </nav>
       </header>
