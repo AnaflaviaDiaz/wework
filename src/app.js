@@ -49,7 +49,6 @@ const showValidateRegisterVisitor = (visitor) => {
   if (visitor.name && visitor.dni && visitor.cel) {
     sectionTakePhotoVisitor.style.display = 'block';
     sectionRegisterVisitor.style.display = 'none';
-    console.log('todo correcto');
   }
 }
 
@@ -63,7 +62,6 @@ const showValidateLoginAdmin = (admin) => {
   if (admin.email && admin.password) {
     const aprroved = loginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
     aprroved.then(() => {
-      console.log('se puede');
     }).catch(() => {
       wrongPassword.hidden = false;
     });
@@ -85,7 +83,6 @@ const getWorkers = () => {
   xhr.send();
 }
 
-// botones
 btnToLoginAdmin.addEventListener('click', () => {
   goToLoginAdmin();
 });
@@ -105,7 +102,6 @@ btnOkRegister.addEventListener('click', () => {
   if (imgPhoto.getAttribute('src') === null) {
     alert('aun no te has tomado una foto');
   } else {
-    // createVisitor();
     getWorkers();
     sectionTakePhotoVisitor.style.display = 'none';
     sectionSelectPerson.style.display = 'block';
@@ -125,5 +121,4 @@ btnSendEmail.addEventListener('click', () => {
     text: 'Se envió el correo, espera la respuesta por favor',
     icon: 'success',
   }).then(() => window.location.href = '');
-  // location.href = 'mailto:'+'anaflaviadmar@gmail.com'+'?cc='+'anaflaviadiazmartel5a@gmail.com'+'&subject='+'probando correos'+'&body='+'probando el detalle del correo';
 });

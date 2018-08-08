@@ -33,7 +33,7 @@ window.loginAdmin = (email, pass) => {
 }
 
 window.logoutAdmin = () => {
-  firebase.auth().signOut().then(function() {
+  firebase.auth().signOut().then(() => {
     window.location.href = "../"
   });
 }

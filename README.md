@@ -31,6 +31,10 @@ La entrevista al personal de Comunal fue grabada [link](https://drive.google.com
 
 El equipo de Laboratoria planteó como solución sustituír a la persona de recepción por una tablet y que una aplicación se encargue de tomar los datos a los visitantes, que se reemplace el requerimiento de dar el DNI en recepción por una foto que será tomada en el transcurso del registro de visita. Como solución del equipo se creó la aplicación Visitor.
 
+Para comparar soluciones con el proceso de registro de visitantes se usó la aplicación de **Envoy**. Para el *visitante*, se registra su nombre completo, el correo electrónico, la compañía, la persona que lo va a recibir y el propósito de la visita, después se le muestra un acuerdo donde debe firmar de manera digital en la tablet, luego se toma una foto después de 3 segundos. Para el *administrador* hay una serie de configuraciones de la aplicación y también puede visualizar el nombre del vistante, la fecha y hora en que un visitante accedió.
+
+Como solución del equipo se tomó la siguiente estructura.
+
 Link de prototipo de alta fidelidad: [Visitor Figma](https://www.figma.com/proto/Ts23UKlg9DL0nJ4ISTIzinYi/visitor?node-id=3%3A2&scaling=scale-down)
 
 Link de la aplicación en gh-pages: [Visitor Gh-Pages](https://anaflaviadiaz.github.io/wework/src/)
@@ -50,5 +54,7 @@ El equipo trabajó bajo las historias de usuario:
 
 4. Yo como "administrador" quiero visualizar a los visitantes incluyendo la fecha y hora que se registraron.
   * Para esta historia, se tomó en consideración que el administrador es quien llevará el control de la información de la visitas y es quién guiará al visitante en el proceso de registro. El administrador podrá ser el único usuario que iniciará sesión con el correo y contraseña que le asignó Comunal o el equipo desarrollador de Visitor. Cuando haya iniciado sesión podrá visualizar el nombre de los visitantes, la fecha y hora en que se registraron.
+
+Se hizo testing de HTML de la aplicación como solución [referencia](https://drive.google.com/open?id=1E8VVlTkHumlqf9BrCzEuj37RNOK-12zS). Como punto de vista de la persona que probó la aplicación como visitante nos dió a entender que la interfaz era muy amigable y fácil de entender el flujo de trabajo. El usuario puedo registrar sus datos y tomarse la foto, seguido pudo enviar un correo a la empresa o persona que seleccionó como filtro.
 
 El equipo de Comunal comentó que le resulta más factible y cómodo el uso de Whatsapp porque muchos trabajadores no están al pendiente de los correos y muchos de ellos ni siquiera revisan su bandeja de entrada por lo que obtaron la mensajería rápido de dicha aplicación. Por otra parte, como solución a una comunicación más rápida es que sea una notificación por SMS.

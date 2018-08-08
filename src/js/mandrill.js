@@ -41,11 +41,8 @@ let dataEmail={
         url: 'https://mandrillapp.com/api/1.0/messages/send.json',
         data: dataEmail,
         success: function (msg) {
-            console.log('se envio el email');
         }
     }).done(function() {
-        console.log('enviado');
       }).fail( function(e) {
-        console.log( 'Error!!: '+e );
     });
 }
