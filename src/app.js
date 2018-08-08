@@ -23,7 +23,6 @@ let emailValue;
 let nameVisited='';
 const video = document.getElementById('camera-stream');
 const imgPhoto = document.getElementById('snap');
-// const controls = document.getElementById('controls');
 const btnTakePhoto = document.getElementById('take-photo');
 const btnDeletePhoto = document.getElementById('delete-photo');
 const errorMessage = document.getElementById('error-message');
@@ -57,7 +56,6 @@ const showValidateRegisterVisitor = (visitor) => {
   if (visitor.name && visitor.dni && visitor.cel) {
     sectionTakePhotoVisitor.style.display = 'block';
     sectionRegisterVisitor.style.display = 'none';
-    console.log('todo correcto');
   }
 }
 
@@ -71,7 +69,6 @@ const showValidateLoginAdmin = (admin) => {
   if (admin.email && admin.password) {
     const aprroved = loginAdmin(txtEmailAdmin.value, txtPasswordAdmin.value);
     aprroved.then(() => {
-      console.log('se puede');
     }).catch(() => {
       wrongPassword.hidden = false;
     });
@@ -85,7 +82,6 @@ const getWorkers = () => {
     if (xhr.readyState == 4 && xhr.status == 200) {
       let xhrWorkers = JSON.parse(xhr.responseText);
       xhrWorkers.map((worker) => {
-        nameVisited=worker.name;
         selectWorker.innerHTML += `<option value='${worker.email}'>${worker.name}</option>`;
       });
     }
@@ -100,7 +96,7 @@ btnToLoginAdmin.addEventListener('click', () => {
 btnOkRegisterVisitor.addEventListener('click', () => {
   const visitor = validateRegisterVisitor(txtNameVisitor.value, txtDniVisitor.value, txtCelVisitor.value);
   showValidateRegisterVisitor(visitor);
-  video.play();
+   video.play();
   showVideo();
 });
 
@@ -115,7 +111,6 @@ btnOkRegister.addEventListener('click', () => {
   if (imgPhoto.getAttribute('src') === null) {
     alert('aun no te has tomado una foto');
   } else {
-    // createVisitor();
     getWorkers();
     sectionTakePhotoVisitor.style.display = 'none';
     sectionSelectPerson.style.display = 'block';
@@ -125,6 +120,7 @@ selectWorker.addEventListener('change', () => {
   if (selectWorker.options[selectWorker.selectedIndex].value !== "") {
     btnSendEmail.disabled = false;
     emailValue = selectWorker.options[selectWorker.selectedIndex].value;
+    nameVisited = selectWorker.options[selectWorker.selectedIndex].textContent;
   } else btnSendEmail.disabled = true;
 });
 btnSendEmail.addEventListener('click', () => {
@@ -135,7 +131,6 @@ btnSendEmail.addEventListener('click', () => {
     text: 'Se envió el correo, espera la respuesta por favor',
     icon: 'success',
   }).then(() => window.location.href = '');
-  // location.href = 'mailto:'+'anaflaviadmar@gmail.com'+'?cc='+'anaflaviadiazmartel5a@gmail.com'+'&subject='+'probando correos'+'&body='+'probando el detalle del correo';
 });
 btnTakePhoto.addEventListener('click', (event) => {
 	event.preventDefault();
@@ -148,8 +143,8 @@ btnTakePhoto.addEventListener('click', (event) => {
 	imgPhoto.style.display = 'flex';
 	imgPhoto.classList.add('img-photo')
 	video.pause();
-  });
-  btnDeletePhoto.addEventListener('click', (event) => {
+});
+btnDeletePhoto.addEventListener('click', (event) => {
 	event.preventDefault();
 	btnDeletePhoto.hidden = true;
 	btnAceptRegister.hidden = true;
@@ -158,4 +153,4 @@ btnTakePhoto.addEventListener('click', (event) => {
 	imgPhoto.style.display = 'none';
 	video.style.display = 'flex';
 	video.play();
-  });
+});

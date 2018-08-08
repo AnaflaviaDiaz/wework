@@ -1,7 +1,6 @@
 // Utilizamos la funcion getUserMedia para obtener la salida de la webcam
 navigator.getMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 const hideUI = () => {
-  // controls.style.display = 'flex';
   video.style.display = 'flex';
   errorMessage.style.display = 'none';
 }
@@ -17,7 +16,6 @@ const showMessageError = (errormsg, error) => {
 const showVideo = () => {
   hideUI();
   video.style.display = 'flex';
-  // controls.style.display = 'flex';
 }
 const takeSnapshot = () => {
   const context = hidden_canvas.getContext('2d');
@@ -27,7 +25,6 @@ const takeSnapshot = () => {
     hidden_canvas.width = width;
     hidden_canvas.height = height;
     context.drawImage(video, 0, 0, width, height);
-    // Convertimos la imagen del canvas en datarurl
     return hidden_canvas.toDataURL('image/png');
   }
 }
@@ -39,7 +36,6 @@ if (!navigator.getMedia) {
     {
       video: true,
     }, (stream) => {
-      // A nuestro componente video le establecemos el src
       video.src = window.URL.createObjectURL(stream);
       video.play();
       video.onplay = () => {

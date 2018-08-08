@@ -40,12 +40,10 @@ let dataEmail={
       type: 'POST',
       url: 'https://mandrillapp.com/api/1.0/messages/send.json',
       data: dataEmail,
-      success: function (msg) {
-          console.log('se envio el email');
+      success: (msg) => {
       }
-  }).done(function() {
-      console.log('enviado');
-    }).fail( function(e) {
-      console.log( 'Error!!: '+e );
+  }).done(() => {
+    }).fail((e) => {
+      throw 'Error!!: '+ e ;
   });
 }

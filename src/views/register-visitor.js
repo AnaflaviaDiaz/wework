@@ -33,4 +33,3 @@ registerVisitor = `
 	</div>
 </form>
 `;
-
