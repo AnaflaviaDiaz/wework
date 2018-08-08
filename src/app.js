@@ -89,7 +89,6 @@ const getWorkers = () => {
   xhr.send();
 }
 
-// botones
 btnToLoginAdmin.addEventListener('click', () => {
   goToLoginAdmin();
 });
